@@ -88,3 +88,5 @@ myCoding.forEach((item)=>{
     console.log(item.languageFileName);
     
 })
+
+// For each value does not return any thing
