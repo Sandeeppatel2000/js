@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Explore Async </h1>
+    <button id="start">Start</button>
+    <button id = "stop">Stop</button>
+</body>
+<script>
+    let intervalId
+    function runFunction(str){
+        console.log(str, Date.now())
+    }
+    
+    function startInterval() {
+    // Clear any existing interval to prevent multiple intervals running simultaneously
+    if (intervalId) {
+        clearInterval(intervalId);
+    }
+
+    intervalId = setInterval(runFunction, 1000,"Hii"); // Start the interval and save its ID
+    }
+    
+function stopInterval(){
+    clearInterval(intervalId)
+    console.log("setInterval Stopped");
+    
+
+}
+
+document.querySelector('#start').addEventListener('click',startInterval)
+document.querySelector('#stop').addEventListener('click', stopInterval)
+
+   
+
+</script>
+</html>
